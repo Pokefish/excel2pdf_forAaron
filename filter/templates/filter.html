@@ -1,0 +1,58 @@
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>列印篩選頁面</title>
+     </head>
+
+     <body>
+          <h1>選擇你要列印：</h1>
+          <form name="details" method="POST" action="{{url_for('select')}}">
+               <!-- 客戶需要上界 -->
+               <!-- safari 不能看到日期浮框但chrom可以 -->
+               <!-- 格式為yyyy-mm-dd 但py 需要yyyy/mm/dd -->
+               <p>受理日期： <input name="Date" type="date" placeholder="YYYY-MM-DD" ></p>  
+               <p>所屬單位：
+                    <select name="Depart">
+                         <option value='全選'>全選</option>
+                         <option value="XXX1">XXX1</option>
+                         <option value="XXX2">XXX2</option>
+                         <option value="XXX3">XXX3</option>
+                    </select><br>
+               </p>
+               <p>保險公司：
+                    <select name="Entity">
+                         <option value='全選'>全選</option>
+                         <option value="甲">甲</option>
+                         <option value="乙">乙</option>
+                         <option value="丙">丙</option>
+                         <optgroup label="其餘壽險公司">
+                              <option value="其餘壽險公司">全選壽險公司</option>
+                              <option value="甲Ａ">甲Ａ</option>
+                              <option value="甲Ｂ">甲Ｂ</option>
+                              <option value="甲Ｃ">甲Ｃ</option>
+                         </optgroup>
+                         <optgroup label="所有產險公司">
+                              <option value="所有產險公司">全選產險公司</option>
+                              <option value="A1">A1</option>
+                              <option value="A2">A2</option>
+                              <option value="A3">A3</option>
+                         </optgroup>
+                    </select><br>
+               </p>
+               <p>案件類別：
+                    <select name="caseType"> 
+                         
+                         <!-- 或是說要怎麼從python list抓進來公司跟與之配對的類別 -->
+                         <option value='全選'>全選</option>
+                         <option value="A">A</option>
+                         <option value="B">B</option>
+                         <option value="C">C</option>
+                    </select><br>
+               </p>
+               
+               
+               
+               <input type="submit" >
+          </form>
+     </body>
+</html>
